@@ -1,6 +1,5 @@
 class Trie {
 private :
-
     vector<Trie*> children;
     bool isEnd;
 
