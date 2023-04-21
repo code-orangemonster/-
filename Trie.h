@@ -3,6 +3,7 @@ private :
     vector<Trie*> children;
     bool isEnd;
 
+
     Trie * searchPrefix(string word){
         Trie *node=this;
         for(char ch:word){
@@ -13,6 +14,7 @@ private :
         }
         return node;
     }
+
 
 public:
     Trie():children(26),isEnd(false) {}
