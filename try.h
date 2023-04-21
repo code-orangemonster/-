@@ -17,6 +17,7 @@ private :
 
 
 public:
+    // 尝试修改
     Trie():children(26),isEnd(false) {}
     
     void insert(string word) {
