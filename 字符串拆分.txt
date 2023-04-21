@@ -1,0 +1,12 @@
+    void split(string& s,vector<string>& res){
+        s+=' ';
+        int n=s.size();
+        string tmp="";
+        for(int i=0;i<n;i++){
+            if(s[i]==' '){
+                res.push_back(tmp);
+                tmp="";
+            }else 
+                tmp+=s[i];
+        }
+    }

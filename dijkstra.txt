@@ -1,0 +1,21 @@
+// Dijkstra 算法模板
+    // 返回从 start 到每个点的最短路
+    vector<int> dijkstra(vector<vector<pair<int, int>>> &g, int start) {
+        vector<int> dist(g.size(), INT_MAX);
+        dist[start] = 0;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+        pq.emplace(0, start);
+        while (!pq.empty()) {
+            auto[d, x] = pq.top();
+            pq.pop();
+            if (d > dist[x]) continue;
+            for (auto[y, wt] : g[x]) {
+                int new_d = dist[x] + wt;
+                if (new_d < dist[y]) {
+                    dist[y] = new_d;
+                    pq.emplace(new_d, y);
+                }
+            }
+        }
+        return dist;
+    }

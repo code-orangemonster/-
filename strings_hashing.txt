@@ -1,0 +1,27 @@
+class Solution {
+public:
+
+    int mul[200010];
+    // 存放前缀字符串hash值
+    // 0位置不用pre[i+1]表示前i个字符串的前缀值
+    // s=abc, pre[0]=0,pre[i]=a（对应hash值）,
+    // pre[2]=ab（对应hash值）,pre[3]=abc（对应hash值）
+    int pre[200010];
+    int mod = 1e9+7;
+    int base = 131;
+    // 左端点下标为l,右端点为r的字符串hash值
+    int getHash(int l,int r){
+        return (pre[r+1]-(long long)pre[l]*mul[r-l+1]%mod+mod)%mod;
+    }
+    // 将字符串传入，初始化
+    void init(string s) {
+        int n=s.size();
+        int t=0;
+        fill(mul,mul+200010,1);
+        memset(pre,0,sizeof(pre));        
+        for(int i=0;i<n;i++){
+            pre[i+1] = ((long long)pre[i]*base%mod+s[i])%mod;
+            mul[i+1] = ((long long)mul[i]*base)%mod;
+        }
+    }
+};

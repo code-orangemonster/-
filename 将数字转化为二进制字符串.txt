@@ -1,0 +1,11 @@
+//十进制数字转成二进制字符串
+    string Binary(int x) 
+    {
+        string s = ""; //定义空字符串，那么如果输入x=0，则返回值为空
+        while(x){
+            if(x % 2 == 0) s = '0' + s;
+            else s = '1' + s;
+            x /= 2;
+        }
+        return "00"+s;
+    }

@@ -1,0 +1,29 @@
+class Solution {
+public:
+    
+    //辗转相除法(欧几里得算法)
+
+    long long gcd(long long a, long long b)
+    {
+        long long da = max(a,b);
+        long long xiao = min(a,b);
+        if(da % xiao == 0)
+            return xiao;
+        else
+        return gcd(xiao, da % xiao);
+
+    }
+
+    // 两个整数的最小公倍数等于两整数之积除以最大公约数
+
+    long long lcm(long long a, long long b)
+    {
+        return a*b / gcd(a, b);
+    }
+
+
+    //	long long ss=mid/(lcm(d1,d2)); 公倍数都是最小公倍数的倍数
+    //   long long a1=mid/(d1);
+     //  long long a2=mid/(d2);
+
+   

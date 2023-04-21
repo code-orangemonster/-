@@ -1,0 +1,9 @@
+    unordered_set<int> se;
+    void d(int num){
+        for (int i = 2; i <= num; i++){  //循环查找判断质因数
+        		while (num % i == 0){    //若i为num的质因数，则输出i
+            	se.insert(i);
+            	num /= i;    //对num除以i后的数求取质因数
+        		}
+        }
+    }
