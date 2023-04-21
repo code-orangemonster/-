@@ -17,7 +17,6 @@ private :
 
 
 public:
-    // 尝试修改
     Trie():children(26),isEnd(false) {}
     
     void insert(string word) {
@@ -41,7 +40,9 @@ public:
     }
 };
 
+
 /**
+ * ggg
  * Your Trie object will be instantiated and called as such:
  * Trie* obj = new Trie();
  * obj->insert(word);
